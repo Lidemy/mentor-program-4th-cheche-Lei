@@ -47,8 +47,19 @@ h3::after{
     outline: rgb(255, 196, 0) 2px solid;
 }
 
+label {
+    margin-left: 10px;
+}
+
 .multiple-radio {
     margin-top: 20px;
+}
+
+textarea {
+    box-sizing: border-box;
+    width: 368px;
+    height: 130px;
+    margin-top: 10px;
 }
 
 .submit {

@@ -15,22 +15,30 @@
             <p>活動日期：2020/12/25 ~ 2021/01/01</p>
             <p>活動地點：台北市信義區市府路1號</p>
             <p class="high-light">*必填</p>
-            <h3 class="must">暱稱</h3>
-            <input class="text" name="nickname" required placeholder="您的回答">
-            <h3>電子郵件</h3>
-            <input class="text" name="email" required placeholder="您的電子郵件">
-            <h3>手機號碼</h3>
-            <input class="text" name="cell phone number" required placeholder="您的手機號碼">
-            <h3>報名類型</h3>
-            <div><input  name="type" required type="radio" value="work"> 在工作上當薪水小偷</div>
-            <div class= "multiple-radio"><input  name="type" required type="radio" value="sofa"> 在沙發上當沙發馬鈴薯</div>
-            <h3>怎麼知道這個活動的？</h3>
-            <input class="text" name="why you know" required placeholder="您的回答">
-            <h3>其他</h3>
-            <p>對活動的一點建議</p>
-            <input class="text" name="suggest" required placeholder="您的回答"><br>
-            <div class="submit"><input class="submit-input" required type="submit" value="提交"></div>
-            <p>送出表單時可別送出密碼喔！</p>
+            <form action="">
+                <h3 class="must">暱稱</h3>
+                <input class="text" name="nickname" required placeholder="您的回答">
+                <h3>電子郵件</h3>
+                <input class="text" name="email" required placeholder="您的電子郵件">
+                <h3>手機號碼</h3>
+                <input class="text" name="cell phone number" required placeholder="您的手機號碼">
+                <h3>報名類型</h3>
+                    <div>
+                        <input  name="type" required type="radio" value="work" id="work"> 
+                        <label for="work">在工作上當薪水小偷</label><br>
+                    </div>
+                    <div class="multiple-radio">
+                        <input  name="type" required type="radio" value="sofa" id="sofa">
+                        <label for="sofa">在沙發上當沙發馬鈴薯</label>
+                    </div>
+                <h3>怎麼知道這個活動的？</h3>
+                <input class="text" name="why you know" required placeholder="您的回答">
+                <h3>其他</h3>
+                <p>對活動的一點建議</p>
+                <textarea class="text" name="suggest" required placeholder="您的回答"></textarea>
+                <div class="submit"><input class="submit-input" required type="submit" value="提交"></div>
+                <p>送出表單時可別送出密碼喔！</p>
+            </form>
         </div>
     </div>
     <footer>
