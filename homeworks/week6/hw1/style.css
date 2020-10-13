@@ -1,0 +1,333 @@
+/* Debug 用的金色邊框 */
+/* * {
+    outline: gold solid 1px;
+} */
+
+* {
+    font-family: 'Questrial', 'MicrosoftJhengHei', sans-serif;
+}
+
+/* 導覽列的區域 */
+
+.navbar {
+    box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+    padding: 0px 20px;
+}
+.navbar .wrapper {
+    height: 84px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 導覽列店名 Logo */
+
+.navbar__site-name {
+    color: #333D51;
+    font-size: 36px;
+    margin-left: 15px;
+    font-family: Questrial;
+}
+
+.navbar__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 18px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar__menu li {
+    margin-left: 12px;
+    border-radius: 8px;
+    transition: 0.2s ease-in;
+}
+
+.navbar__menu li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 12px 24px;
+}
+
+.navbar__menu li.active,
+.navbar__menu li:hover {
+    background: #D3AC2B
+}
+
+.navbar__menu li.active a,
+.navbar__menu li:hover a {
+    color: white;
+}
+
+/* banner 的區域 */
+
+.banner {
+    height: 400px;
+    background: url(images/banner.jpg) center/cover no-repeat;
+    background-position: bottom left;
+    position: relative;
+}
+
+.banner::after {
+    content:'';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.banner h1 {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    color: white;
+    z-index: 2;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+/* 內容區共同標題等等 */
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section h2 {
+    font-size: 36px;
+    border-left: #CBD0D8 15px solid;
+    padding-left: 16px;
+    margin: 80px 10px 70px 10px;
+}
+
+.section p {
+    font-size: 16px;
+    line-height: 2.5em;
+    text-align: center;
+    margin: 0 25px 0 25px;
+}
+
+/* 介紹簡介 */
+
+.intro__text {
+    margin: 0 30px;
+}
+
+/* 介紹簡介的按鈕 */
+
+.buttons {
+    margin: 80px 30px 0 30px;
+}
+
+.button {
+    display: inline-block;    
+    padding: 60px 80px;
+    border-radius: 10px;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button__order {
+    background-color: #333D51;
+}
+
+.button__query {
+    background-color: #D3AC2B;
+    margin-left: 23px;
+}
+
+/* menu 菜單的 4 張照片 */
+
+.menu__images {
+    font-size: 0;
+}
+
+.menu__images div {
+    display: inline-block;
+    width: 25%;
+}
+
+.menu__images div img {
+    width: 100%
+}
+
+/* 評論區 */
+
+.comment__all {
+    display: flex;
+    margin: 60px 25px 0 25px;
+}
+
+.comment__all div + div {
+    margin-left: 15px;
+}
+
+.comment__customer {
+    width: 33%;
+    /* background-color: tomato; */
+    position: relative;
+    border-radius: 5px;
+    box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
+    border: 1px solid #c7e5ec ;
+}
+
+.customer__information {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.customer__photo {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: white;
+    /* border: #333D51 1px solid; */
+}
+
+.customer__photo img {
+    width: 100%;
+}
+
+.customer__name {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.customer__comment p {
+    margin: 90px 15px 20px 15px;
+}
+
+footer {
+    margin-top: 48px;
+}
+
+.footer__top {
+    background: #CBD0D8;
+    padding: 32px;
+    color: black;
+}
+
+.footer__top .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__infor {
+    margin-right: 16px;
+}
+
+.footer__infor div + div {
+    margin-top: 10px;
+}
+
+.footer__sitename {
+    font-size: 36px;
+    color: #333D51;
+}
+
+.footer__bottom {
+    text-align: center;
+    color: white;
+    background: #333D51;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+@media(max-width: 768px) {
+
+    .navbar {
+        padding: 0px 0px;
+    }
+
+    .navbar .wrapper {
+        height: 120px;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+
+    .navbar__menu {
+        display: flex;
+        width: 100%;
+        font-size: 0;
+    }
+
+    .navbar__menu li {
+        flex: 1;
+        margin-left: 0;
+        border-radius: 0%;
+        text-align: center;;
+    }
+
+    .navbar__menu li a {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .navbar__site-name {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .button {
+        display: block;
+        text-align: center;
+    }
+
+    .button__query {
+        margin-left: 0px;
+        margin-top: 16px;
+    }
+
+    .menu__images {
+        flex-direction: column;
+    }
+
+    .menu__images div {
+        width: 100%;
+    }
+
+    .comment__all {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .comment__customer {
+        width: auto;
+        margin: 0 15px;
+        /* align-items: center; */
+    }
+
+    .comment__all div + div {
+        margin-top: 100px;
+    }
+
+    .footer__top .wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .footer__infor {
+        margin-right: 0px;
+        margin-top: 25px;
+    }
+}
