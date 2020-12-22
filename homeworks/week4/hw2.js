@@ -3,21 +3,25 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const request = require('request');
 
-const api = 'https://lidemy-book-store.herokuapp.com/books';
+const API_ENDPOINT = 'https://lidemy-book-store.herokuapp.com/books';
 const action = process.argv[2];
 const params01 = process.argv[3];
 const params02 = process.argv[4];
 
 const getList = () => {
-  request.get(`${api}?_limit=20`, (error, response, body) => {
+  request.get(`${API_ENDPOINT}?_limit=20`, (error, response, body) => {
     if (error) {
       console.log('發生錯誤！ ', error);
     } else {
-      const json = JSON.parse(body);
-      for (let i = 0; i < json.length; i += 1) {
-        const bookId = json[i].id;
-        const bookName = json[i].name;
-        console.log(`${bookId} ${bookName}`);
+      try {
+        const json = JSON.parse(body);
+        for (let i = 0; i < json.length; i += 1) {
+          const bookId = json[i].id;
+          const bookName = json[i].name;
+          console.log(`${bookId} ${bookName}`);
+        }
+      } catch (e) {
+        console.log(e);
       }
     }
   });
@@ -25,14 +29,18 @@ const getList = () => {
 
 const getOneBook = () => {
   if (params01) {
-    request.get(`${api}/${params01}`, (error, response, body) => {
+    request.get(`${API_ENDPOINT}/${params01}`, (error, response, body) => {
       if (error) {
         console.log('發生錯誤！ ', error);
       } else {
-        const json = JSON.parse(body);
-        const bookId = json.id;
-        const bookName = json.name;
-        console.log(`${bookId} ${bookName}`);
+        try {
+          const json = JSON.parse(body);
+          const bookId = json.id;
+          const bookName = json.name;
+          console.log(`${bookId} ${bookName}`);
+        } catch (e) {
+          console.log(e);
+        }
       }
     });
   } else {
@@ -42,7 +50,7 @@ const getOneBook = () => {
 
 const deleteOneBook = () => {
   if (params01) {
-    request.delete(`${api}/${params01}`, (error) => {
+    request.delete(`${API_ENDPOINT}/${params01}`, (error) => {
       if (error) {
         console.log('發生錯誤！ ', error);
       } else {
@@ -55,7 +63,7 @@ const deleteOneBook = () => {
 const createOneBook = () => {
   if (params01) {
     request.post({
-      url: `${api}`,
+      url: `${API_ENDPOINT}`,
       form: {
         name: `${params01}`,
       },
@@ -74,7 +82,7 @@ const createOneBook = () => {
 const updateOneBook = () => {
   if (params01 && params02) {
     request.patch({
-      url: `${api}/${params01}`,
+      url: `${API_ENDPOINT}/${params01}`,
       form: {
         name: `${params02}`,
       },
