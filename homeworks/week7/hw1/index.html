@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>耍懶耍起來！</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="style.css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <h1>新耍懶運動報名表單</h1>
+            <p>活動日期：2020/12/25 ~ 2021/01/01</p>
+            <p>活動地點：台北市信義區市府路1號</p>
+            <p class="high-light">*必填</p>
+            <form action="">
+                <div class="required">                
+                    <h3>暱稱</h3>
+                    <input type="text" class="text name" name="nickname" placeholder="您的回答">
+                    <h5 class="warning">請補上暱稱喔！</h5>
+                </div>
+                <div class="required">
+                    <h3>電子郵件</h3>
+                    <input type="text" class="text email" name="email" placeholder="您的電子郵件">
+                    <h5 class="warning">請補上電子郵件喔！</h5>
+                </div>
+                <div class="required">
+                    <h3>手機號碼</h3>
+                    <input type="text" class="text phone-number" name="cell phone number" placeholder="您的手機號碼">
+                    <h5 class="warning">請補上手機號碼喔！</h5>
+                </div>
+                <div class="required">
+                    <h3>報名類型</h3>
+                    <div>
+                        <input class="radio" name="type" type="radio" value="work" id="work"> 
+                        <label for="work">在工作上當薪水小偷</label><br>
+                    </div>
+                    <div class="multiple-radio">
+                        <input class="radio" name="type" type="radio" value="sofa" id="sofa">
+                        <label for="sofa">在沙發上當沙發馬鈴薯</label>
+                    </div>
+                    <h5 class="radio__warning warning">請補上報名類型喔！</h5>
+                </div>
+                <div class="required">
+                    <h3>怎麼知道這個活動的？</h3>
+                    <input type="text" class="text why" name="why you know" placeholder="您的回答">
+                    <h5 class="warning">請補上內容喔！</h5>
+                </div>
+                <div>
+                    <h3>其他</h3>
+                    <p>對活動的一點建議</p>
+                    <textarea class="suggest" type="text" class="text" name="suggest" placeholder="您的回答"></textarea>
+                </div>
+                <div>
+                    <div class="submit"><input class="submit-input" required type="submit" value="提交"></div>
+                    <p>送出表單時可別送出密碼喔！</p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <h6>© 2020 © Copyright. All rights Reserved.</h6>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
